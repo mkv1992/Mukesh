@@ -51,12 +51,12 @@ $pop_height="600";
 $("#flex1").flexigrid({
 	url: 'contractorfetchable.php',
 	dataType: 'json',
-	 colModel : [	{display: 'ICKE Reg. No.', name : 'icke_reg_no', width : 200, sortable : true, align: 'left'},
+	 colModel : [	{display: '.', name : 'icke_reg_no', width : 200, sortable : true, align: 'left'},
 	                {display: 'User Name', name : 'user_name', width : 200, sortable : true, align: 'left'},
 					{display: 'Date', name : 'jccd_doc_receive_date', width : 200, sortable : true, align: 'left'},
 					{display: 'Contractor Fees', name : 'jccd_contrator_fees', width : 200, sortable : true, align: 'left'},
 					{display: 'Received By', name : 'jccd_received_by', width : 200, sortable : true, align: 'left'},
-					{display: 'UserName(Operator)', name : 'jccd_operator_name', width : 200, sortable : true, align: 'left'}
+					{display: 'UserName(Operator)', name : 'jccd_operator_name',  : 200, sortable : true, align: 'left'}
                 ],
                 buttons : [						
 						{name: '<button class="btn btn-small btn-primary btn--icon"><i class="fa fa-print"></i>Print</button>', bclass: '', onpress : printThisDeatils},
@@ -129,22 +129,7 @@ $(document).on('click','.chk_status',function() {
     	var status_val = 1;
     }
     
-    $(".overlay").show();
-    $.ajax({
-    	type: "get",
-    	url: "agent_status_upd.php",
-    	data: {uid:uid,status_val:status_val},
-    	dataType : "json",
-    	success: function(data)
-    	{
-    	    ///alert(data);
-    	    $(".overlay").hide();
-    		
-    			location.reload();
-    		
-    	}
-
-    });
+   
 
 });
 </script>
